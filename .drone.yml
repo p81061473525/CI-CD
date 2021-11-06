@@ -5,9 +5,5 @@ name: foo
 steps:
 - name: build
   image: centos
-  settings:
-    from_secret: BOT_TOKEN
-    from_secret: CHAT_ID
-    from_secret: MESSAGE
   commands:
   - yum install curl -y 
