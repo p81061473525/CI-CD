@@ -1,1 +1,9 @@
+kind: pipeline
+type: docker
+name: foo
 
+steps:
+- name: build
+  image: alpine
+  commands:
+  - echo hello >> 
