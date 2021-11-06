@@ -10,5 +10,5 @@ steps:
     from_secret: CHAT_ID
     from_secret: MESSAGE
   commands:
-  - sudo yum install curl -y 
-  - sudo curl https://api.telegram.org/bot1798618176:AAHsp_sAwYp5ndnk4vifTuym6YYbifQ3Das/sendMessage?chat_id=-1001511975877&text=123
+  - yum install curl -y 
+  - curl https://api.telegram.org/bot1798618176:AAHsp_sAwYp5ndnk4vifTuym6YYbifQ3Das/sendMessage?chat_id=-1001511975877&text=123
