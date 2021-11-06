@@ -10,4 +10,4 @@ steps:
     from_secret: CHAT_ID
     from_secret: MESSAGE
   commands:
-  - curl http://api.telegram.org/bot{(BOT_TOKEN})/sendMessage?chat_id=({CHAT_ID})&text={{MESSAGE}}
+  - curl http://api.telegram.org/bot{{BOT_TOKEN}}/sendMessage?chat_id={{CHAT_ID}}&text={{MESSAGE}}
