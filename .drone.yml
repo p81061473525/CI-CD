@@ -5,5 +5,9 @@ name: foo
 steps:
 - name: build
   image: alpine
+  settings:
+    from_secret: BOT_TOKEN
+    from_secret: CHAT_ID
+    from_secret: MESSAGE
   commands:
-  - echo hello
+  - curl http://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=${MESSAGE}
