@@ -6,10 +6,12 @@ steps:
 - name: build
   image: centos
   commands:
-  - echo "appdemo"
-  - echo $USERNAME, $PASSWORD
+  - yum install curl -y 
+  - curl "https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=${MESSAGE}"
   environment:
-    USERNAME:
-      from_secret: username
-    PASSWORD:
-      from_secret: password
+    BOT_TOKEN:
+      from_secret: bot_token
+    CHAT_ID:
+      from_secret: chat_id
+    MESSAGE:
+      from_secret: message
