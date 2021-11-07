@@ -10,6 +10,7 @@ steps:
   - echo $BOT_TOKEN , $CHAT_ID , $MESSAGE
   - curl "https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=${MESSAGE}"
   - curl "https://api.telegram.org/bot$BOT_TOKEN/sendMessage?chat_id=$CHAT_ID&text=$MESSAGE"
+  - curl https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=${MESSAGE}
   - echo $USERNAME, $PASSWORD
   environment:
     BOT_TOKEN:
