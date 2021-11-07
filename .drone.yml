@@ -6,4 +6,10 @@ steps:
 - name: build
   image: centos
   commands:
-  - yum install curl -y 
+  - echo "appdemo"
+  - echo $USERNAME, $PASSWORD
+  environment:
+    USERNAME:
+      from_secret: username
+    PASSWORD:
+      from_secret: password
