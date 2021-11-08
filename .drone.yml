@@ -10,8 +10,6 @@ steps:
       from_secret: token
     to:
       from_secret: chatid 
-    message: >
-      老鼠愛大米。
-
+    message_file: message_file.tpl
     
         
