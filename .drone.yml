@@ -11,7 +11,7 @@ steps:
     to:
       from_secret: chatid 
     message: >
-      GOOD.
+      老鼠愛大米。
 
     
         
