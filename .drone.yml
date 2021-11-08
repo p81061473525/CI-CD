@@ -12,6 +12,7 @@ steps:
       from_secret: chat
     MESSAGE:
       rom_secret: message
-    message:
-      curl "https://api.telegram.org/bot{{BOT_TOKEN}}/sendMessage?chat_id={{CHAT_ID}}&text={{MESSAGE}}"
+  commands:
+  - yum install curl -y
+  - curl "https://api.telegram.org/bot{{BOT_TOKEN}}/sendMessage?chat_id={{CHAT_ID}}&text={{MESSAGE}}"
    
