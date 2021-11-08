@@ -4,14 +4,14 @@ name: 我的第一次
 
 steps:
 - name: build
-    image: appleboy/drone-telegram
-    settings:
-      token: 
-        from_secret: token
-      to:
-        from_secret: chatid 
-      message: >
-        GOOD.
+  image: appleboy/drone-telegram
+  settings:
+    token: 
+      from_secret: token
+    to:
+      from_secret: chatid 
+    message: >
+      GOOD.
 
     
         
