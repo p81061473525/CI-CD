@@ -1,33 +1,15 @@
-kind: pipeline
-type: docker
-name: foo
-
-steps:
-- name: build
-  image: centos
-  commands:
-    - yum install curl -y
-    - echo $BOT_TOKEN , $CHAT_ID , $MESSAGE
-    - echo $USERNAME, $PASSWORD
-    - echo TTTTEEEESSSSTTT
-    - curl "https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=${MESSAGE}"
-    - curl "https://api.telegram.org/bot$BOT_TOKEN/sendMessage?chat_id=$CHAT_ID&text=$MESSAGE"
-    - curl https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=${MESSAGE}
-    - curl "https://api.telegram.org/bot{{BOT_TOKEN}}/sendMessage?chat_id={{CHAT_ID}}&text={{MESSAGE}}"
-  seting:
-    message:
-    - curl "https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=${MESSAGE}"
-    - curl "https://api.telegram.org/bot$BOT_TOKEN/sendMessage?chat_id=$CHAT_ID&text=$MESSAGE"
-    - curl https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=${MESSAGE}
-    - curl https://api.telegram.org/bot{{BOT_TOKEN}}/sendMessage?chat_id={{CHAT_ID}}&text={{MESSAGE}}"
-  environment:
-    BOT_TOKEN:
-      from_secret: bot_token
-    CHAT_ID:
-      from_secret: chat_id
-    MESSAGE:
-      from_secret: message
-    USERNAME:
-      from_secret: username
-    PASSWORD:
-      from_secret: password
+ - name: 發送持續整合結果到告警頻道
+    event:
+      - push
+      - pull_request
+    image: appleboy/drone-telegram
+    settings:
+      BOT_TOKEN:
+        from_secret: bot
+      CHAT_ID:
+        from_secret: chat
+      MESSAGE:
+        from_secret: message
+      message:
+        curl "https://api.telegram.org/bot{{BOT_TOKEN}}/sendMessage?chat_id={{CHAT_ID}}&text={{MESSAGE}}"
+   
