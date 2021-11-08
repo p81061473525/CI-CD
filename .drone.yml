@@ -6,6 +6,10 @@ steps:
 - name: build
   image: centos
   environment:
+    USERNAME:
+      from_secret: username
+    PASSWORD:
+      from_secret: password
     BOT_TOKEN:
       from_secret: bot
     CHAT_ID:
@@ -14,6 +18,8 @@ steps:
       rom_secret: message
   commands:
   - yum install curl -y
+  - echo $BOT_TOKEN , $CHAT_ID , $MESSAGE
+  - echo $USERNAME, $PASSWORD
   - echo ${BOT_TOKEN},${CHAT_ID},${MESSAGE}
   - curl "https://api.telegram.org/bot${BOT_TOKE}/sendMessage?chat_id=${CHAT_ID}&text=${MESSAGE}"
    
