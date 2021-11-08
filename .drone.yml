@@ -3,28 +3,15 @@ type: docker
 name: 我的第一次
 
 steps:
-- name: build
-  image: centos
-  environment:
-    USERNAME:
-      from_secret: username
-    PASSWORD:
-      from_secret: password
-    BOT_TOKEN:
-      from_secret: bot
-    CHAT_ID:
-      from_secret: chat
-    MESSAGE:
-      rom_secret: message
-  commands:
-  - yum install curl -y
-  - export BOT_TOKEN
-  - export CHAT_ID
-  - export MESSAGE
-  - echo -e "BOT_TOKEN , CHAT_ID , MESSAGE"
-  - echo -e "$BOT_TOKEN , $CHAT_ID , $MESSAGE \n"
-  - echo -e "USERNAME, PASSWORD"
-  - echo -e "$USERNAME, $PASSWORD \n"
-  - echo "curl https://api.telegram.org/bot${BOT_TOKE}/sendMessage?chat_id=${CHAT_ID}&text=${MESSAGE} \n "
-  - curl "https://api.telegram.org/bot${BOT_TOKE}/sendMessage?chat_id=${CHAT_ID}&text=${MESSAGE}"
-   
+- name: send telegram notification
+    image: appleboy/drone-telegram
+    settings:
+      token: 
+        from_secret: token
+      to:
+        from_secret: chatid 
+      message: >
+        GOOD.
+
+    
+        
