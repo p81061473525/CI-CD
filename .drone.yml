@@ -18,7 +18,10 @@ steps:
       rom_secret: message
   commands:
   - yum install curl -y
-  - echo -e "BOT_TOKEN , CHAT_ID ,$MESSAGE"
+  - expert BOT_TOKEN
+  - expert CHAT_ID
+  - expert MESSAGE
+  - echo -e "BOT_TOKEN , CHAT_ID , MESSAGE"
   - echo -e "$BOT_TOKEN , $CHAT_ID , $MESSAGE \n"
   - echo -e "USERNAME, PASSWORD"
   - echo -e "$USERNAME, $PASSWORD \n"
