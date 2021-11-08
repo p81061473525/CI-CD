@@ -18,8 +18,10 @@ steps:
       rom_secret: message
   commands:
   - yum install curl -y
-  - echo $BOT_TOKEN , $CHAT_ID , $MESSAGE
-  - echo $USERNAME, $PASSWORD
-  - echo ${BOT_TOKEN},${CHAT_ID},${MESSAGE}
+  - echo -e "BOT_TOKEN , CHAT_ID ,$MESSAGE"
+  - echo -e "$BOT_TOKEN , $CHAT_ID , $MESSAGE \n"
+  - echo -e "USERNAME, PASSWORD"
+  - echo -e "$USERNAME, $PASSWORD \n"
+  - echo "curl https://api.telegram.org/bot${BOT_TOKE}/sendMessage?chat_id=${CHAT_ID}&text=${MESSAGE} \n "
   - curl "https://api.telegram.org/bot${BOT_TOKE}/sendMessage?chat_id=${CHAT_ID}&text=${MESSAGE}"
    
