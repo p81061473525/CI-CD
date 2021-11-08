@@ -4,14 +4,14 @@ name: 我的第一次
 
 steps:
 - name: build
-    image: centos
-    settings:
-      BOT_TOKEN:
-        from_secret: bot
-      CHAT_ID:
-        from_secret: chat
-      MESSAGE:
-        from_secret: message
-      message:
-        curl "https://api.telegram.org/bot{{BOT_TOKEN}}/sendMessage?chat_id={{CHAT_ID}}&text={{MESSAGE}}"
+  image: centos
+  settings:
+    BOT_TOKEN:
+      from_secret: bot
+    CHAT_ID:
+      from_secret: chat
+    MESSAGE:
+      rom_secret: message
+    message:
+      curl "https://api.telegram.org/bot{{BOT_TOKEN}}/sendMessage?chat_id={{CHAT_ID}}&text={{MESSAGE}}"
    
