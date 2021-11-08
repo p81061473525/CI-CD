@@ -15,5 +15,5 @@ steps:
   commands:
   - yum install curl -y
   - echo ${BOT_TOKEN},${CHAT_ID},${MESSAGE}
-  - curl "https://api.telegram.org/bot{{ BOT_TOKE }}/sendMessage?chat_id={{ CHAT_ID }} &text={{ MESSAGE }}"
+  - curl "https://api.telegram.org/bot${BOT_TOKE}/sendMessage?chat_id=${CHAT_ID}&text=${MESSAGE}"
    
