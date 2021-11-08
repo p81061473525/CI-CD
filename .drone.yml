@@ -3,7 +3,7 @@ type: docker
 name: 我的第一次
 
 steps:
-- name: send telegram notification
+- name: build
     image: appleboy/drone-telegram
     settings:
       token: 
