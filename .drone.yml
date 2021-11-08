@@ -5,6 +5,9 @@ name: 我的第一次
 steps:
 - name: build
   image: centos
+  event:
+  - push
+  - pull_request
   environment:
     BOT_TOKEN:
       from_secret: bot
