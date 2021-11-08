@@ -11,5 +11,7 @@ steps:
     to:
       from_secret: chatid 
     message_file: message_file.tpl
+    sticker:
+    - 海綿寶寶.jpg
     
         
