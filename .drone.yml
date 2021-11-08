@@ -3,7 +3,7 @@ type: docker
 name: 我的第一次
 
 steps:
-- name: abc
+- name: build
     image: centos
     settings:
       BOT_TOKEN:
