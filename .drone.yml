@@ -1,8 +1,9 @@
- - name: 發送持續整合結果到告警頻道
-    event:
-      - push
-      - pull_request
-    image: appleboy/drone-telegram
+kind: pipeline
+type: docker
+name: 我的第一次
+ 
+- name: abc
+    image: centos
     settings:
       BOT_TOKEN:
         from_secret: bot
