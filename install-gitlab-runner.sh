@@ -1,0 +1,13 @@
+#!/bin/bash
+
+yum install docker -y 
+systemctl restart docker
+docker volume create gitlab-runner-config
+docker run -d --name gitlab-runner --restart always \
+    -v /var/run/docker.sock:/var/run/docker.sock \
+    -v gitlab-runner-config:/etc/gitlab-runner \
+    gitlab/gitlab-runner:latest
+echo "##################"
+echo "請注意，要輸入東西#"
+echo "##################" 
+docker run --rm -it -v gitlab-runner-config:/etc/gitlab-runner gitlab/gitlab-runner:latest register
