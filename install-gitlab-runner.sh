@@ -8,6 +8,6 @@ docker run -d --name gitlab-runner --restart always \
     -v gitlab-runner-config:/etc/gitlab-runner \
     gitlab/gitlab-runner:latest
 echo "##################"
-echo "請注意，要輸入東西#"
+echo " ENTER PARAMETER #"
 echo "##################" 
 docker run --rm -it -v gitlab-runner-config:/etc/gitlab-runner gitlab/gitlab-runner:latest register
